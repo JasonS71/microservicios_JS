@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de operaciones</title>
+    <style>
+        .par {
+            background-color: #dddddd;
+        }
+        .impar {
+            background-color: #fbfbfb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla del <%= base %></h1>
+    
+    <table border="1">
+        <% let contador = 0; %>
+        <% datos.forEach(dato => { %>
+        <% contador++; %>
+        <tr class="<%= contador % 2 === 0 ? 'par' : 'impar' %>">
+            <td><%= base %></td>
+            <td><%= simbolo %></td>
+            <td><%= dato.valor %></td>
+            <td>=</td>
+            <td>
+                <% if (simbolo === '÷') { %>
+                    <%= dato.resultado.toFixed(2) %>
+                <% } else { %>
+                    <%= dato.resultado.toFixed(0) %>
+                <% } %>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
