@@ -1,0 +1,11 @@
+<% include('layout', { body: null }) %>
+<h2>Editar Usuario</h2>
+<form action="/edit/<%= contacto.id %>" method="POST">
+  <label>Nombre: 
+    <input type="text" name="nombre" required value="<%= contacto.nombre %>">
+  </label>
+  <label>Correo: 
+    <input type="email" name="correo" required value="<%= contacto.correo %>">
+  </label>
+  <button type="submit">Actualizar</button>
+</form>
